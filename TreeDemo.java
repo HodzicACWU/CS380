@@ -92,7 +92,7 @@ class Node{
 
 		/**
 		 * Finds a value in the BST
-		 * @param root The node to start traversing
+		 * @param root The node from which the tree is traversed
 		 * @param key The value to find in the tree
 		 * @return A boolean that represents if the value was found
 		 */
@@ -105,31 +105,32 @@ class Node{
 	   }
 
 		/**
-		 * Returns the lowest value in the BST
-		 * @param root the root from which the tree is traversed
-		 * @return the lowest value in the BST
+		 * Finds the key with the lowest value in the BST
+		 * @param root The node from which the tree is traversed
+		 * @return The lowest key value in the BST
 		 */
 		public int getMin(Node root){
 			if(root == null || root.left == null){ return root.value; }
 			return getMin(root.left);
 	    }
-	  
-	  
-	  
-	   /*
-	   a method to find the node in the tree
-	   with a largest key
-	   */
-	   public int getMax(Node root){
 
+
+		/**
+		 * Finds the key with the greatest value in the BST
+		 * @param root The node from which the tree is traversed
+		 * @return The greatest key value in the BST
+		 */
+		public int getMax(Node root){
+		   if(root == null || root.right == null){ return root.value; }
+		   return getMax(root.right);
 	   }
-	   
-	   
-	   
-	   /*
-	   this method will not compile until getMax
-	   is implemented
-	   */
+
+		/**
+		 *
+		 * @param root
+		 * @param key
+		 * @return
+		 */
 	   public Node delete(Node root, int key){
 	      
 	      if(root == null){
