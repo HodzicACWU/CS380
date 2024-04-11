@@ -11,7 +11,6 @@ class Node{
 	}
 
 	class BinarySearchTree{
-
 	   Node root;
 	  
 	   
@@ -52,18 +51,18 @@ class Node{
 	      
 	      }//closing main if-else 
 	   }
-	   
-	   /*
-	   pre-order traversal
-	   Prints the value of every node preorder
-	   */
-	   public void preOrderTraversal(Node root){
-		   if (root != null) {
-			   System.out.print(root.value + " ");
-			   preOrderTraversal(root.left);
-			   preOrderTraversal(root.right);
-		   }
-	   }
+
+		/**
+		 * Traverses the binary search tree using pre-order (node, left, right)
+		 * @param root The node from which the rest of the tree will be searched
+		 */
+		public void preOrderTraversal(Node root){
+			if (root != null) {
+				System.out.print(root.value + " ");
+				preOrderTraversal(root.left);
+				preOrderTraversal(root.right);
+			}
+		}
 
 	   
 	   
@@ -71,11 +70,6 @@ class Node{
 	   in-order traversal
 	   */
 	   public void inOrderTraversal(Node root){
-		   if (root != null) {
-			   inOrderTraversal(root.left);
-			   System.out.print(root.value + " ");
-			   inOrderTraversal(root.right);
-		   }
 	   }
 	   
 	   
@@ -85,11 +79,7 @@ class Node{
 	   */
 	  
 	   public void postOrderTraversal(Node root){
-		   if (root != null) {
-			   postOrderTraversal(root.left);
-			   postOrderTraversal(root.right);
-			   System.out.print(root.value + " ");
-		   }
+
 	   }
 	   
 	   
@@ -99,16 +89,7 @@ class Node{
 	   with a specific value
 	   */
 	   public boolean find(Node root, int key){
-		   if (root == null) {
-			   return false;
-		   }
-		   if (root.value == key) {
-			   return true;
-		   } else if (key < root.value) {
-			   return find(root.left, key);
-		   } else {
-			   return find(root.right, key);
-		   }
+
 	   }
 	   
 	   
@@ -118,10 +99,7 @@ class Node{
 	   with a smallest key
 	   */
 	   public int getMin(Node root){
-		   if (root == null || root.left == null) {
-			   return root.value;
-		   }
-		   return getMin(root.left);
+
 	   }
 	  
 	  
@@ -131,10 +109,7 @@ class Node{
 	   with a largest key
 	   */
 	   public int getMax(Node root){
-		   if (root == null || root.right == null) {
-			   return root.value;
-		   }
-		   return getMax(root.right);
+
 	   }
 	   
 	   
