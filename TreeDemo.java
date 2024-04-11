@@ -97,26 +97,22 @@ class Node{
 		 * @return A boolean that represents if the value was found
 		 */
 	   public boolean find(Node root, int key){
-			if(root == null){ // if root is null, the value has not been found
-				return false;
-			}
-			if(root.value == key){
-				return true;
-			} else if(key < root.value){
-				return find(root.left, key);
-			} else {
-				return find(root.right, key);
-			} // in-order traversal
+		   if(root == null){ return false; }// if root is null, the value has not been found
+
+		   if(root.value == key){ return true; }
+		   else if(key < root.value){ return find(root.left, key); }
+		   else { return find(root.right, key); } // in-order traversal
 	   }
 
 		/**
-		 *
-		 * @param root
-		 * @return
+		 * Returns the lowest value in the BST
+		 * @param root the root from which the tree is traversed
+		 * @return the lowest value in the BST
 		 */
 		public int getMin(Node root){
-
-	   }
+			if(root == null || root.left == null){ return root.value; }
+			return getMin(root.left);
+	    }
 	  
 	  
 	  
