@@ -89,22 +89,32 @@ class Node{
 				System.out.print(root.value + " ");
 			}
 	   }
-	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
-	   */
-	   public boolean find(Node root, int key){
 
+		/**
+		 * Finds a value in the BST
+		 * @param root The node to start traversing
+		 * @param key The value to find in the tree
+		 * @return A boolean that represents if the value was found
+		 */
+	   public boolean find(Node root, int key){
+			if(root == null){ // if root is null, the value has not been found
+				return false;
+			}
+			if(root.value == key){
+				return true;
+			} else if(key < root.value){
+				return find(root.left, key);
+			} else {
+				return find(root.right, key);
+			} // in-order traversal
 	   }
-	   
-	   
-	   
-	   /*
-	   a method to find the node in the tree
-	   with a smallest key
-	   */
-	   public int getMin(Node root){
+
+		/**
+		 *
+		 * @param root
+		 * @return
+		 */
+		public int getMin(Node root){
 
 	   }
 	  
