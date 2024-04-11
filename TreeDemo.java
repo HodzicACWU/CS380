@@ -12,16 +12,13 @@ class Node{
 
 	class BinarySearchTree{
 	   Node root;
-	  
-	   
-	   /*
-	   recursive insert method
-		
-	   */
-	   /*
-	   inserts a node into the tree
-	   */
-	   public void insert(int value){
+
+
+		/**
+		 * Recursive method to insert a value to a BST
+		 * @param value The value to be inserted
+		 */
+		public void insert(int value){
 	      //tree is empty
 	      if(root == null){
 	         root = new Node(value);
@@ -126,10 +123,10 @@ class Node{
 	   }
 
 		/**
-		 *
-		 * @param root
-		 * @param key
-		 * @return
+		 * Deletes a node from the tree
+		 * @param root the node from which the rest of the tree is traversed
+		 * @param key the key of the node to delete
+		 * @return the node deleted
 		 */
 	   public Node delete(Node root, int key){
 	      
