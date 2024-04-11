@@ -53,23 +53,28 @@ class Node{
 	   }
 
 		/**
-		 * Traverses the binary search tree using pre-order (node, left, right)
-		 * @param root The node from which the rest of the tree will be searched
+		 * Traverses the binary search tree (BST) using pre-order (node, left, right)
+		 * @param root The node from which the rest of the tree will be traversed
 		 */
 		public void preOrderTraversal(Node root){
 			if (root != null) {
-				System.out.print(root.value + " ");
+				//System.out.print(root.value + " ");
 				preOrderTraversal(root.left);
 				preOrderTraversal(root.right);
 			}
 		}
 
-	   
-	   
-	   /*
-	   in-order traversal
-	   */
-	   public void inOrderTraversal(Node root){
+
+		/**
+		 * Traverses the BST using in-order traversal (left, node, right)
+		 * @param root The node from which the rest of the BST will be traversed
+		 */
+		public void inOrderTraversal(Node root){
+			if(root != null){
+				inOrderTraversal(root.left);
+				//System.out.println(root.value + " ");
+				inOrderTraversal(root.right);
+			}
 	   }
 	   
 	   
