@@ -58,7 +58,7 @@ class Node{
 		 */
 		public void preOrderTraversal(Node root){
 			if (root != null) {
-				//System.out.print(root.value + " ");
+				System.out.print(root.value + " ");
 				preOrderTraversal(root.left);
 				preOrderTraversal(root.right);
 			}
@@ -72,22 +72,23 @@ class Node{
 		public void inOrderTraversal(Node root){
 			if(root != null){
 				inOrderTraversal(root.left);
-				//System.out.println(root.value + " ");
+				System.out.println(root.value + " ");
 				inOrderTraversal(root.right);
 			}
 	   }
-	   
-	   
-	   
-	   /*
-	   post-order traversal
-	   */
-	  
-	   public void postOrderTraversal(Node root){
 
+
+		/**
+		 * Traverses the BST using in post-order traversal (left, right, node)
+		 * @param root the node from which the rest of the BST will be traversed
+		 */
+		public void postOrderTraversal(Node root){
+			if (root != null) {
+				postOrderTraversal(root.left);
+				postOrderTraversal(root.right);
+				System.out.print(root.value + " ");
+			}
 	   }
-	   
-	   
 	   
 	   /*
 	   a method to find the node in the tree
